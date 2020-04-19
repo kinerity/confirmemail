@@ -1,0 +1,15 @@
+{% if S_REGISTRATION %}
+<script type="text/javascript">
+$(function() {
+	var $form = $('#register');
+
+	var new_dl = '';
+	new_dl += '<dl>';
+	new_dl += '<dt><label for="email_confirm">{{ lang('CONFIRM_EMAIL')|addslashes }}{{ lang('COLON')|addslashes }}</label></dt>';
+	new_dl += '<dd><input type="text" tabindex="3" name="email_confirm" id="email_confirm" size="25" maxlength="100" value="{{ EMAIL_CONFIRM }}" class="inputbox autowidth" title="{{ lang('CONFIRM_EMAIL')|addslashes }}" /></dd>';
+	new_dl += '</dl>';
+
+	$form.find('input[type=email][id=email]').parents('dl').after(new_dl);
+});
+</script>
+{% endif %}
